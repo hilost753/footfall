@@ -1,0 +1,65 @@
+global:
+  conf_threshold: 0.20
+  person_class_id: 0
+  model_path: "yolov8n.pt"
+  report_dir: "reports"
+
+video:
+  target_width: 1280
+
+cameras:
+  - camera_id: 01000001241000201
+    source_type: file
+    file_path: "videos/01000001241000201.mp4"
+    roi_file: "annotation/01000001241000201_roi.txt"
+    direction:
+      positive_to_negative: IN
+      negative_to_positive: OUT
+
+  - camera_id: Glan
+    source_type: file
+    file_path: "videos/ATM_LOBBY_UBI_Glan_1_20251223115959_20251223120959_72469303_best_clip_220s_to_340s.mp4"
+    roi_file: "annotation/ATM_LOBBY_UBI_Glan_1_20251223115959_20251223120959_72469303_best_clip_220s_to_340s_roi.txt"
+    direction:
+      positive_to_negative: IN
+      negative_to_positive: OUT
+
+  - camera_id: Front
+    source_type: file
+    file_path: "videos/front.mp4"
+    roi_file: "annotation/front_roi.txt"
+    direction:
+      positive_to_negative: IN
+      negative_to_positive: OUTs
+
+  - camera_id: Side
+    source_type: file
+    file_path: "videos/side.mp4"
+    roi_file: "annotation/side_roi.txt"
+    direction:
+      positive_to_negative: OUT
+      negative_to_positive: IN
+
+  - camera_id: Side_2
+    source_type: file
+    file_path: "videos/side_2.mp4"
+    roi_file: "annotation/side_2_roi.txt"
+    direction:
+      positive_to_negative: OUT
+      negative_to_positive: IN
+
+  - camera_id: RTSP
+    source_type: rtsp
+    rtsp_url: rtsp://username:password@192.168.1.64:554/Streaming/Channels/101
+    roi_file: "annotation/RTSP_roi.txt"
+    direction:
+      positive_to_negative: OUT
+      negative_to_positive: IN
+
+  - camera_id: WEBCAM
+    source_type: webcam
+    device_index: 0
+    roi_file: "annotation/WEBCAM_roi.txt"
+    direction:
+      positive_to_negative: IN
+      negative_to_positive: OUT
